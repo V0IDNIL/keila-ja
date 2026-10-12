@@ -26,7 +26,7 @@ the browser's `Accept-Language`. A Japanese mail template can force Japanese wit
 - `.github/workflows/build.yml`: the build
 
 Strings Keila adds in later versions show in English until they are translated
-here. Nothing breaks.
+here.
 
 ## License
 
