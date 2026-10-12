@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "(optional)"
+msgstr "（任意）"
+
+msgid "I am human."
+msgstr "ロボットではありません"
+
+msgid "Open Source Newsletter Tool"
+msgstr "オープンソースのニュースレターツール"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "Thank you!"
+msgstr "ご登録ありがとうございます。"
+
+msgid "Please confirm your email"
+msgstr "メールをご確認ください"
+
+msgid "We’ve just sent an email to %{email}. Please click the link in that email to confirm your subscription."
+msgstr "%{email} 宛にメールをお送りしました。メールに記載のリンクから登録を完了してください。"
+
+msgid "Confirming ..."
+msgstr "登録の確認"
+
+msgid "Please confirm your subscription."
+msgstr "登録を完了してよろしいですか。"
+
+msgid "Confirm Subscription"
+msgstr "登録を完了する"
+
+msgid "Unsubscribing ..."
+msgstr "配信停止の確認"
+
+msgid "Please confirm that you want to unsubscribe."
+msgstr "配信を停止してよろしいですか。"
+
+msgid "Unsubscribe"
+msgstr "配信を停止する"
+
+msgid "Cancel Subscription"
+msgstr "登録を取り消す"
+
+msgid "You have been unsubscribed from this list."
+msgstr "配信停止の手続きが完了しました。"
+
+msgid "Your data has been deleted."
+msgstr "ご入力いただいた情報を削除しました。"
+
+msgid "You will not be subscribed to this list."
+msgstr "配信リストへの登録は行われません。"
+
+msgid "This confirmation link has expired or has already been used."
+msgstr "この確認リンクは有効期限が切れているか、すでに使用されています。"
+
+msgid "Please submit the form again to receive a new confirmation link."
+msgstr "お手数ですが、もう一度フォームからお申し込みください。新しい確認リンクをお送りします。"
+
+msgid "Back to form"
+msgstr "フォームに戻る"
