@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Adds the Japanese translation to a Keila source tree.
+# Adds the Japanese translation to a Keila source tree, and lets a campaign
+# set the mail's lang attribute.
 #
 # Usage: apply.sh <keila-source-dir>
 #
@@ -27,5 +28,14 @@ if ! has_ja; then
   perl -0pi -e 's/(config :keila, KeilaWeb\.Gettext,[^\]]*?locales: \[)/$1"ja", /s' "$cfg"
 fi
 has_ja || { echo "apply.sh: could not add \"ja\" to the Gettext locales in $cfg" >&2; exit 1; }
+
+# The mail layout hardcodes lang="en" on <html> and on the article wrapper.
+# Take it from the campaign's Liquid data instead ({"lang": "ja"}), so a
+# Japanese mail declares itself Japanese and clients pick Japanese glyphs.
+# Mails without it (double opt-in, other campaigns) keep "en".
+layout="$src/priv/email_templates/hybrid/hybrid.html.liquid"
+[ -f "$layout" ] || { echo "apply.sh: $layout not found" >&2; exit 1; }
+perl -pi -e "s/lang=\"en\"/lang=\"{{ campaign.data.lang | default: 'en' }}\"/g" "$layout"
+[ "$(grep -c "campaign.data.lang" "$layout")" -eq 2 ] || { echo "apply.sh: expected two lang attributes in $layout" >&2; exit 1; }
 
 echo "apply.sh: Japanese added to $src"

@@ -23,6 +23,11 @@ the browser's `Accept-Language`. A Japanese mail template can force Japanese wit
 - `priv/gettext/ja/LC_MESSAGES/*.po`: the translations
 - `apply.sh <keila-source-dir>`: copies them in and adds `"ja"` to the Gettext
   locales in `config/config.exs`. Fails if that file has changed shape.
+  It also replaces the hardcoded `lang="en"` in the mail layout
+  (`priv/email_templates/hybrid/hybrid.html.liquid`) with
+  `{{ campaign.data.lang | default: 'en' }}`: a campaign whose Liquid data holds
+  `{"lang": "ja"}` declares itself Japanese, so mail clients choose Japanese glyphs
+  for kanji. Every other mail keeps `en`.
 - `.github/workflows/build.yml`: the build
 
 Strings Keila adds in later versions show in English until they are translated
